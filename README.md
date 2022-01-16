@@ -23,6 +23,7 @@ pod 'IAMPopup'
 ## Author
 
 camosss
+
 Email: camosss777@gmail.com
 
 ## License
