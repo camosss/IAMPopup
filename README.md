@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/IAMPopup.svg?style=flat)](https://cocoapods.org/pods/IAMPopup)
 [![Platform](https://img.shields.io/cocoapods/p/IAMPopup.svg?style=flat)](https://cocoapods.org/pods/IAMPopup)
 
-## Example
+## Introduction
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+IAMPopup is a simple class for expressing custom popup in various forms. This includes where to display the popup and space to decorate the View.
 
 ## Requirements
 
@@ -22,7 +22,8 @@ pod 'IAMPopup'
 
 ## Author
 
-camosss, camosss@naver.com
+camosss
+Email: camosss777@gmail.com
 
 ## License
 
