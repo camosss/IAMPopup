@@ -7,7 +7,9 @@
 
 ## Introduction
 
-IAMPopup is a simple class for expressing custom popup in various forms. This includes where to display the popup and space to decorate the View.
+`IAMPopup` is a simple class for expressing custom popup in various forms. This includes where to display the popup and space to decorate the View.
+
+Please feel free to contribute to this project, open issues, make suggestions and submit pull-requests. If you use this project in your app, let me know. I'd love to see what you do with it.
 
 ## Requirements
 
