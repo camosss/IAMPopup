@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'IAMPopup'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of IAMPopup.'
+  s.summary          = 'IAMPopup is a simple class for expressing custom popup in various forms. This includes where to display the popup and space to decorate the View.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,9 +26,8 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'camosss' => 'camosss@naver.com' }
   s.source           = { :git => 'https://github.com/camosss/IAMPopup.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'IAMPopup/Classes/**/*'
   
@@ -37,6 +36,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  # s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
