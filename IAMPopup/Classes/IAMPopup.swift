@@ -13,7 +13,6 @@ public struct IAMPopupManager {
     public static let shared = IAMPopupManager()
     
     let screenSize = UIScreen.main.bounds.size
-
     var containerView =  UIView()
     var slideView = UIView()
 }
@@ -23,20 +22,20 @@ public extension UIView {
 
     // MARK: - Top_Popup
     
-    func IAM_top(height: CGFloat, completion: @escaping () -> Void) {
+    func IAM_top(height: CGFloat, completion: @escaping (UIView) -> ()) {
         let IAMPopup = IAMPopupManager.shared
-
+        
         slideViewUp(action: #selector(top_slideViewDown(height:)),
                     maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner],
                     before_slideUpView_frame: CGRect(x: 15,
-                                                     y: -height,
+                                                     y: -(height + 100),
                                                      width: IAMPopup.screenSize.width - 30,
                                                      height: height),
                     after_slideUpView_frame: CGRect(x: 15,
                                                     y: 40,
                                                     width: IAMPopup.screenSize.width - 30,
-                                                    height: height),
-                    configure_SlideView_UI: completion)
+                                                    height: height))
+        completion(IAMPopup.slideView)
     }
     
     @objc
@@ -44,27 +43,27 @@ public extension UIView {
         let IAMPopup = IAMPopupManager.shared
 
         slideViewDown(slideDowmView_frame: CGRect(x: 15,
-                                                  y: -height,
+                                                  y: -(height + 100),
                                                   width: IAMPopup.screenSize.width - 30,
                                                   height: height))
     }
     
     // MARK: - Center_Popup
     
-    func IAM_center(height: CGFloat, completion: @escaping () -> Void) {
+    func IAM_center(height: CGFloat, completion: @escaping (UIView) -> ()) {
         let IAMPopup = IAMPopupManager.shared
 
         slideViewUp(action: #selector(center_slideViewDown),
                     maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner],
-                    before_slideUpView_frame: CGRect(x: -(IAMPopup.screenSize.width - 100),
-                                                     y: IAMPopup.screenSize.height / 4,
-                                                     width: 0,
-                                                     height: 0),
+                    before_slideUpView_frame: CGRect(x: 50,
+                                                     y: IAMPopup.screenSize.height,
+                                                     width: IAMPopup.screenSize.width - 100,
+                                                     height: height),
                     after_slideUpView_frame: CGRect(x: 50,
-                                                    y: IAMPopup.screenSize.height / 4,
+                                                    y: (IAMPopup.screenSize.height - height)/2,
                                                     width: IAMPopup.screenSize.width - 100,
-                                                    height: height),
-                    configure_SlideView_UI: completion)
+                                                    height: height))
+        completion(IAMPopup.slideView)
     }
     
     
@@ -72,15 +71,15 @@ public extension UIView {
     private func center_slideViewDown(height: CGFloat) {
         let IAMPopup = IAMPopupManager.shared
 
-        slideViewDown(slideDowmView_frame: CGRect(x: -(IAMPopup.screenSize.width - 100),
-                                                  y: IAMPopup.screenSize.height / 4,
-                                                  width: 0,
-                                                  height: 0))
+        slideViewDown(slideDowmView_frame: CGRect(x: 50,
+                                                  y: IAMPopup.screenSize.height,
+                                                  width: IAMPopup.screenSize.width - 100,
+                                                  height: height))
     }
     
     // MARK: - Bottom_Popup
     
-    func IAM_bottom(height: CGFloat, completion: @escaping () -> Void) {
+    func IAM_bottom(height: CGFloat, completion: @escaping (UIView) -> ()) {
         let IAMPopup = IAMPopupManager.shared
 
         slideViewUp(action: #selector(bottom_slideViewDown(height:)),
@@ -92,8 +91,8 @@ public extension UIView {
                     after_slideUpView_frame: CGRect(x: 0,
                                                     y: IAMPopup.screenSize.height - height,
                                                     width: IAMPopup.screenSize.width,
-                                                    height: height),
-                    configure_SlideView_UI: completion)
+                                                    height: height))
+        completion(IAMPopup.slideView)
     }
     
     @objc
@@ -108,7 +107,7 @@ public extension UIView {
     
     // MARK: - Reuse Method
     
-    private func slideViewUp(action: Selector?, maskedCorners: CACornerMask, before_slideUpView_frame: CGRect, after_slideUpView_frame: CGRect, configure_SlideView_UI: @escaping () -> ()) {
+    private func slideViewUp(action: Selector?, maskedCorners: CACornerMask, before_slideUpView_frame: CGRect, after_slideUpView_frame: CGRect) {
         let IAMPopup = IAMPopupManager.shared
         
         addSubview(IAMPopup.containerView)
@@ -132,7 +131,6 @@ public extension UIView {
                        animations: {
             IAMPopup.containerView.alpha = 0.5
             IAMPopup.slideView.frame = after_slideUpView_frame
-            configure_SlideView_UI()
         }, completion: nil)
     }
     

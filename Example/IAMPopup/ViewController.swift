@@ -13,57 +13,41 @@ class ViewController: UIViewController {
 
     // MARK: - Properties
     
-    let topButton: UIButton = {
-        let bt = UIButton(frame: CGRect(x: 150, y: 300, width: 100, height: 50))
-        bt.setTitle("TOP", for: .normal)
-        bt.backgroundColor = .black
-        bt.addTarget(self, action: #selector(top_tapBtn), for: .touchUpInside)
-        return bt
-    }()
-    
-    let centerButton: UIButton = {
-        let bt = UIButton(frame: CGRect(x: 150, y: 400, width: 100, height: 50))
-        bt.setTitle("MIDDLE", for: .normal)
-        bt.backgroundColor = .black
-        bt.addTarget(self, action: #selector(center_tapBtn), for: .touchUpInside)
-        return bt
-    }()
-    
-    let bottomButton: UIButton = {
-        let bt = UIButton(frame: CGRect(x: 150, y: 500, width: 100, height: 50))
-        bt.setTitle("BOTTOM", for: .normal)
-        bt.backgroundColor = .black
-        bt.addTarget(self, action: #selector(bottom_tapBtn), for: .touchUpInside)
-        return bt
+    var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.frame = CGRect(x: 16, y: 16, width: 100, height: 50)
+        return label
     }()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        [topButton, centerButton, bottomButton].forEach {
-            view.addSubview($0)
-        }
     }
 
     // MARK: - Action
     
-    @objc func top_tapBtn() {
-        self.view.IAM_top(height: 100) {
-            print("top button")
+    @IBAction func top_tapBtn(_ sender: UIButton) {
+        self.view.IAM_top(height: 100) { slideView in
+            slideView.addSubview(self.titleLabel)
+            self.titleLabel.text = "TOP"
         }
     }
     
-    @objc func center_tapBtn() {
-        self.view.IAM_center(height: 450) {
-            print("center button")
+    @IBAction func center_tapBtn(_ sender: UIButton) {
+        self.view.IAM_center(height: 400) { slideView in
+            slideView.addSubview(self.titleLabel)
+            self.titleLabel.text = "Center"
         }
     }
     
-    @objc func bottom_tapBtn() {
-        self.view.IAM_bottom(height: 300) {
-            print("bottom buttom")
+    @IBAction func bottom_tapBtn(_ sender: UIButton) {
+        self.view.IAM_bottom(height: 300) { slideView in
+            slideView.addSubview(self.titleLabel)
+            self.titleLabel.text = "Bottom"
         }
     }
+    
 }
 
