@@ -1,0 +1,22 @@
+{
+  "name": "IAMPopup",
+  "version": "0.1.0",
+  "summary": "A short description of IAMPopup.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/camosss/IAMPopup",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "camosss": "camosss@naver.com"
+  },
+  "source": {
+    "git": "https://github.com/camosss/IAMPopup.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "IAMPopup/Classes/**/*"
+}

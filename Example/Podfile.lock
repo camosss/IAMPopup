@@ -1,0 +1,16 @@
+PODS:
+  - IAMPopup (0.1.0)
+
+DEPENDENCIES:
+  - IAMPopup (from `../`)
+
+EXTERNAL SOURCES:
+  IAMPopup:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IAMPopup: 2d8742ec2863968a6bc827b5f82b4e665d4ebc18
+
+PODFILE CHECKSUM: 849c5d9f509b4e4bbea4383b13fe7723772d59e3
+
+COCOAPODS: 1.11.2

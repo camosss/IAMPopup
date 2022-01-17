@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.frame = CGRect(x: 16, y: 16, width: 100, height: 50)
         return label

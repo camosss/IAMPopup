@@ -1,0 +1,6 @@
+framework module IAMPopup {
+  umbrella header "IAMPopup-umbrella.h"
+
+  export *
+  module * { export * }
+}
