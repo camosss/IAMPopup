@@ -2,6 +2,7 @@
 
 [![CI Status](https://img.shields.io/travis/camosss/IAMPopup.svg?style=flat)](https://travis-ci.org/camosss/IAMPopup)
 [![Version](https://img.shields.io/cocoapods/v/IAMPopup.svg?style=flat)](https://cocoapods.org/pods/IAMPopup)
+[![SwiftPM](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)](https://swift.org/package-manager/)
 [![License](https://img.shields.io/cocoapods/l/IAMPopup.svg?style=flat)](https://cocoapods.org/pods/IAMPopup)
 [![Platform](https://img.shields.io/cocoapods/p/IAMPopup.svg?style=flat)](https://cocoapods.org/pods/IAMPopup)
 
