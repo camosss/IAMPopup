@@ -28,22 +28,22 @@ class ViewController: UIViewController {
     // MARK: - Action
     
     @IBAction func top_tapBtn(_ sender: UIButton) {
-        self.view.IAM_top(height: 100) { slideView in
-            slideView.addSubview(self.titleLabel)
+        self.view.IAM_top(height: 100) { popupView in
+            popupView.addSubview(self.titleLabel)
             self.titleLabel.text = "TOP"
         }
     }
     
     @IBAction func center_tapBtn(_ sender: UIButton) {
-        self.view.IAM_center(height: 400) { slideView in
-            slideView.addSubview(self.titleLabel)
+        self.view.IAM_center(height: 400) { popupView in
+            popupView.addSubview(self.titleLabel)
             self.titleLabel.text = "Center"
         }
     }
     
     @IBAction func bottom_tapBtn(_ sender: UIButton) {
-        self.view.IAM_bottom(height: 300) { slideView in
-            slideView.addSubview(self.titleLabel)
+        self.view.IAM_bottom(height: 300) { popupView in
+            popupView.addSubview(self.titleLabel)
             self.titleLabel.text = "Bottom"
         }
     }
